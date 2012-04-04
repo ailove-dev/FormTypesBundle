@@ -1,0 +1,20 @@
+parameters:
+
+services:
+    form.type.datepicker:
+        id: form.type.datepicker
+        class: Ailove\FormTypesBundle\Form\Type\DatepickerType
+        tags:
+            - { name: form.type, alias: sonata_type_datepicker }
+    sonata.admin.form.filter.type.datepicker:
+        id: sonata.admin.form.filter.type.datepicker
+        class: Ailove\FormTypesBundle\Form\Type\Filter\DatepickerFilterType
+        tags:
+            - { name: form.type, alias: sonata_type_filter_datepicker }
+        arguments: [@translator]
+    sonata.admin.orm.filter.type.datepicker:
+        id: sonata.admin.orm.filter.type.datepicker
+        class: Ailove\FormTypesBundle\Form\Type\Filter\DatepickerFilter
+        tags:
+            - { name: sonata.admin.filter.type, alias: doctrine_orm_datepicker}
+        arguments: [@translator]
