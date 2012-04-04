@@ -44,6 +44,7 @@ twig:
 AdminClass:
 
 ``` php
+<?php
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
