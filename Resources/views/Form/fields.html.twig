@@ -1,0 +1,8 @@
+{% block sonata_type_datepicker_widget %}
+<input {{ block('widget_attributes') }} type="text" {% if value is not empty %}value="{{ value }}" {% endif %} />
+<script>
+    $(function(){
+        $('input.sonata-datepicker').datepicker($.datepicker.regional['{{ locale }}']);
+    });
+</script>
+{% endblock %}
