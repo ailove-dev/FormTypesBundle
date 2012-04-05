@@ -51,6 +51,8 @@ twig:
 
 AdminClass:
 
+FormFields
+
 ``` php
 <?php
     protected function configureFormFields(FormMapper $formMapper)
@@ -63,4 +65,17 @@ AdminClass:
     }
 ```
 
-option locale represents localization value of jquery datpicker.
+Filters
+
+``` php
+<?php
+protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+{
+	$datagridMapper
+	    ->add('startDate', 'doctrine_orm_datepicker', array(), 'sonata_type_datepicker', array('locale' => 'ru'))
+	;
+}
+```
+
+option locale represents localization value of jquery datepicker.
+
