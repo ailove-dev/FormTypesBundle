@@ -2,7 +2,6 @@
 
 
 ### Stop 0: Modify deps
-
 [FormTypesBundle]
     git=git://github.com/ailove-dev/FormTypesBundle.git
     target=/bundles/Ailove/FormTypesBundle
