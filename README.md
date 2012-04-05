@@ -2,9 +2,11 @@
 
 
 ### Stop 0: Modify deps
+``` yml
 [FormTypesBundle]
     git=git://github.com/ailove-dev/FormTypesBundle.git
     target=/bundles/Ailove/FormTypesBundle
+```
 
 ### Step 1: Configure the Autoloader
 Add a new namespace to your autoload
