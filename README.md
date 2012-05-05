@@ -1,7 +1,7 @@
 # How to install
 
 
-### Stop 0: Modify deps
+### Step 0: Modify deps
 ``` yml
 [FormTypesBundle]
     git=git://github.com/ailove-dev/FormTypesBundle.git
