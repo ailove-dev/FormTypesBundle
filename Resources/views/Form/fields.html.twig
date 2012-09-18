@@ -1,8 +1,31 @@
 {% block sonata_type_datepicker_widget %}
-<input {{ block('widget_attributes') }} type="text" {% if value is not empty %}value="{{ value }}" {% endif %} />
+{% if not range %}
+    <input {{ block('widget_attributes') }} type="text" {% if value is not empty %}value="{{ value }}" {% endif %} />
+{% else %}
+    {% set tmp_id = id %}
+    {% set id = tmp_id ~ '_start' %}
+    {% set tmp_full_name = full_name %}
+    {% set full_name  = tmp_full_name ~ '[start]' %}
+    <input {{ block('widget_attributes') }} type="text" {% if value is not empty %}value="{{ value.start }}" {% endif %} /> -
+    {% set id = tmp_id ~ '_end' %}
+    {% set full_name  = tmp_full_name ~ '[end]' %}
+    <input {{ block('widget_attributes') }} type="text" {% if value is not empty %}value="{{ value.end }}" {% endif %} />
+{% endif %}
 <script>
     $(function(){
         $('input.sonata-datepicker').datepicker($.datepicker.regional['{{ locale }}']);
     });
 </script>
 {% endblock %}
+
+{% block ailove_type_from_to_widget %}
+{% set tmp_id = id %}
+{% set id = tmp_id ~ '_start' %}
+{% set tmp_full_name = full_name %}
+{% set full_name  = tmp_full_name ~ '[start]' %}
+<input {{ block('widget_attributes') }} type="text" {% if value is not empty %}value="{{ value.start }}" {% endif %} /> -
+{% set id = tmp_id ~ '_end' %}
+{% set full_name  = tmp_full_name ~ '[end]' %}
+<input {{ block('widget_attributes') }} type="text" {% if value is not empty %}value="{{ value.end }}" {% endif %} />
+{% endblock %}
+

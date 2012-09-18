@@ -19,6 +19,8 @@ class DatepickerTransformer implements DataTransformerInterface
     public function reverseTransform($value)
     {
 
+        if (is_array($value)) return $value;
+
         if(!$value) return '';
 
         if(null === $value)
@@ -36,6 +38,8 @@ class DatepickerTransformer implements DataTransformerInterface
      */
     public function transform($value)
     {
+
+        if (is_array($value)) return $value;
 
         if(!$value) return '';
 

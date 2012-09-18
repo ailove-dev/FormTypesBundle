@@ -1,6 +1,15 @@
 parameters:
 
 services:
+
+    form.type.ailove.from.to:
+        id: form.type.ailove.from.to
+        class: Ailove\FormTypesBundle\Form\Type\FromToType
+        tags:
+            - { name: form.type, alias: ailove_type_from_to }
+
+
+
     form.type.datepicker:
         id: form.type.datepicker
         class: Ailove\FormTypesBundle\Form\Type\DatepickerType
